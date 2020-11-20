@@ -2,19 +2,21 @@
 
 {% block page_title %}Home{% endblock %}
 
-{% block page_description %}Description.{% endblock %}
+{% block page_description %}Home of all the facts about Queen.{% endblock %}
 
 {% block content %}
 <div class="container">
   <div class="row">
     {% for member in queen.members %}
-    <div class="col-sm-6 col-lg-4">
+    <div class="col-sm-6 col-lg-3">
       <div class="card bg-light mb-4">
         <div class="card-body text-dark">
+          <img src="img/img-queen/members/{{ member.image }}" alt="" class="card-img-top mb-2">
           <h5 class="card-title">{{ member.name }}</h5>
           <h6>{{ member.instruments }}</h6>
           <p class="card-text">{{ member.tenure }}</p>
           <p class="card-text">{{ member.birthplace }}</p>
+          <a class="btn btn-primary" href="{{ relative_path }}members/{{ member.slug}}.html" role="button">Biography</a>
         </div>
       </div>
     </div>

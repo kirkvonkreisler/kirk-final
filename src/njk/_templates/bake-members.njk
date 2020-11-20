@@ -1,0 +1,23 @@
+{% extends '_templates/base.njk' %}
+{% set relative_path = "../" %}
+
+{% block page_title %}{{ name }}{% endblock %}
+
+{% block page_description %}Biography of {{ name }}{% endblock %}
+
+{% block content %}
+  <article class="container">
+    <div class="row">
+      <div class="col-sm-4">
+        <img src="../img/img-queen/members/{{ image }}" alt="{{ name }}" class="img-fluid mb-2">
+        <p>{{ tenure }}</p>
+        <p>{{ instruments }}</p>
+        <hr class="d-sm-none">
+      </div>
+      <div class="col-sm-8">
+        <h1>{{ name }}</h1>
+        {{ description | safe }}
+      </div>
+    </div>
+  </article>
+{% endblock %}
