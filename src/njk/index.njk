@@ -7,20 +7,49 @@
 {% block content %}
 <div class="container">
   <div class="row">
+    <div class="col text-center mb-3">
+      <h3>ORIGINAL MEMBERS</h3>
+    </div>
+  </div>
+  <div class="row">
     {% for member in queen.members %}
     <div class="col-sm-6 col-lg-3">
       <div class="card bg-light mb-4">
         <div class="card-body text-dark">
           <img src="img/img-queen/members/{{ member.image }}" alt="" class="card-img-top mb-2">
-          <h5 class="card-title">{{ member.name }}</h5>
-          <h6>{{ member.instruments }}</h6>
+          <h4 class="card-title">{{ member.name }}</h5>
+          <p class="card-text">{{ member.instruments }}</p>
           <p class="card-text">{{ member.tenure }}</p>
-          <p class="card-text">{{ member.birthplace }}</p>
           <a class="btn btn-primary" href="{{ relative_path }}members/{{ member.slug}}.html" role="button">Biography</a>
         </div>
       </div>
     </div>
     {% endfor %}
+  </div>
+  <div class="row">
+    <div class="col text-center mb-3">
+      <h3>2021 TOUR DATES</h3>
+    </div>
+  </div>
+  <div class="row">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Date</th>
+          <th scope="col">City</th>
+          <th scope="col">Venue</th>
+        </tr>
+      </thead>
+      {% for tour in queen.tour2021 %}
+      <tbody>
+        <tr>
+          <th scope="row">{{ tour.date }}</th>
+          <td>{{ tour.city }}</td>
+          <td>{{ tour.venue }}</td>
+        </tr>
+      </tbody>
+      {% endfor %}
+    </table>
   </div>
 </div>
 {% endblock %}

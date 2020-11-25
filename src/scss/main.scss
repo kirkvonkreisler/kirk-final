@@ -21,7 +21,22 @@
 // Import partials
 @import "nav";
 @import "jumbotron";
+@import "footer";
+@import "cards";
+@import "discography";
+
+h3, h1, h4 {
+  font-family: 'Montserrat', sans-serif;
+}
 
 h3 {
-  font-size: 1.5rem;
+  font-size: 1.75rem;
+}
+
+h1 {
+  font-size: 2.25rem;
+}
+
+p, a {
+  font-family: 'Playfair Display', serif;
 }

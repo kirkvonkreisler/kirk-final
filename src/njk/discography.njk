@@ -6,18 +6,23 @@
 
 {% block content %}
   <div class="container">
-  <div class="row">
-    {% for album in queen.discography %}
-    <div class="col-sm-6 col-lg-4">
-      <div class="card bg-light mb-4">
-        <div class="card-body text-dark">
-          <img src="img/img-queen/discs/{{ album.image }}" alt="{{ album.title }}" class="card-img-top mb-2">
-          <h5 class="card-title">{{ album.title }}</h5>
-          <p class="card-text">{{ album.year }}</p>
-        </div>
+    <div class="row">
+      <div class="col text-center mb-3">
+        <h3>ALBUMS</h3>
       </div>
     </div>
-    {% endfor %}
+    <div class="row">
+      {% for album in queen.discography %}
+      <div class="col-sm-6 col-lg-4">
+        <div class="card bg-light mb-4">
+          <div class="card-body text-dark">
+            <img src="img/img-queen/discs/{{ album.image }}" alt="{{ album.title }}" class="card-img-top mb-2">
+            <h5 class="card-title">{{ album.title }}</h5>
+            <p class="card-text">{{ album.year }}</p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
   </div>
-</div>
 {% endblock %}
