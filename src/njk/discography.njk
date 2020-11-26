@@ -2,13 +2,13 @@
 
 {% block page_title %}Discography{% endblock %}
 
-{% block page_description %}All of Queen's studio albums.{% endblock %}
+{% block page_description %}All of Queen's studio albums and data on their success.{% endblock %}
 
 {% block content %}
   <div class="container">
     <div class="row">
       <div class="col text-center mb-3">
-        <h3>ALBUMS</h3>
+        <h3>ALBUMS & DATA</h3>
       </div>
     </div>
     <div class="row">
@@ -17,12 +17,13 @@
         <div class="card bg-light mb-4">
           <div class="card-body text-dark">
             <img src="img/img-queen/discs/{{ album.image }}" alt="{{ album.title }}" class="card-img-top mb-2">
-            <h5 class="card-title">{{ album.title }}</h5>
-            <p class="card-text">{{ album.year }}</p>
+            <h5 class="card-title mt-1">{{ album.title }}</h5>
+            <p class="card-text-2">{{ album.year }}</p>
           </div>
         </div>
       </div>
       {% endfor %}
     </div>
+    {% include "_includes/data.njk" %}
   </div>
 {% endblock %}

@@ -20,36 +20,12 @@
           <h4 class="card-title">{{ member.name }}</h5>
           <p class="card-text">{{ member.instruments }}</p>
           <p class="card-text">{{ member.tenure }}</p>
-          <a class="btn btn-primary" href="{{ relative_path }}members/{{ member.slug}}.html" role="button">Biography</a>
+          <a class="btn btn-secondary" href="{{ relative_path }}members/{{ member.slug}}.html" role="button">Biography</a>
         </div>
       </div>
     </div>
     {% endfor %}
   </div>
-  <div class="row">
-    <div class="col text-center mb-3">
-      <h3>2021 TOUR DATES</h3>
-    </div>
-  </div>
-  <div class="row">
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">Date</th>
-          <th scope="col">City</th>
-          <th scope="col">Venue</th>
-        </tr>
-      </thead>
-      {% for tour in queen.tour2021 %}
-      <tbody>
-        <tr>
-          <th scope="row">{{ tour.date }}</th>
-          <td>{{ tour.city }}</td>
-          <td>{{ tour.venue }}</td>
-        </tr>
-      </tbody>
-      {% endfor %}
-    </table>
-  </div>
+  {% include "_includes/tourdates.njk" %}
 </div>
 {% endblock %}
